@@ -149,7 +149,8 @@
         resultsDiv.innerHTML = '<p style="text-align:center; color:#64748b;">در حال جستجو در بانک پروژه‌ها...</p>';
 
         try {
-            const response = await fetch(`http://localhost:3000/search?field=${encodeURIComponent(query)}`);
+            // آدرس به سرور Render شما تغییر یافت
+            const response = await fetch(`https://pajologist.onrender.com/search?field=${encodeURIComponent(query)}`);
             const data = await response.json();
             resultsDiv.innerHTML = '';
 
@@ -192,7 +193,7 @@
             `;
 
         } catch (error) {
-            resultsDiv.innerHTML = '<p style="color:red; text-align:center;">خطا در برقراری ارتباط با سرور. مطمئن شوید Node.js در حال اجراست.</p>';
+            resultsDiv.innerHTML = '<p style="color:red; text-align:center;">خطا در برقراری ارتباط با سرور آنلاین.</p>';
         }
     }
 
